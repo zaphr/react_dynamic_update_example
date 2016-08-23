@@ -21,7 +21,7 @@ export default class BundleDisplay extends React.Component {
   handleUserChange(event) {
     store.dispatch({
       type: 'USER_ENTRY',
-      value: event.target.value
+      value: event.target.value.split("\n")
     })
   }
 
@@ -29,7 +29,7 @@ export default class BundleDisplay extends React.Component {
 
     return (
       <div>
-        <input
+        <textarea
             type="text"
             placeholder="Enter orders"
             onChange={this.handleUserChange}

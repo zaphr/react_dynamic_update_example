@@ -27,7 +27,7 @@ const intialState = {
         }
     },
 
-    userEntry: "foozzzzz",
+    userEntry: "",
 
     bundles: []
 }
@@ -36,11 +36,38 @@ const flowerStore = (state = intialState, action) => {
 
     switch (action.type) {
         case 'USER_ENTRY':
-            return Object.assign({}, state, {userEntry: action.value})
+            var orders = []
+            action.value.forEach((line) => {
+                orders.push(orderForLine(line, state.stockBundles))
+            })
+            return Object.assign({}, state, {bundles: orders})
     }
 
     return state
 }
 
 export default createStore(flowerStore)
+
+const orderForLine = (lineText, bundleData) => {
+    var order = {
+        valid: false,
+        lineText: lineText
+    }
+
+    let textSections = lineText.trim().split(" ").filter((line) => line.length != 0)
+
+    if (textSections.length != 2) {
+        return order
+    }
+
+    order.count = textSections[0]
+    order.code = textSections[1]
+
+    let validOrderQuantity = /^[0-9]+$/.test(order.count)
+    let validOrderId = Object.keys(bundleData).filter((productID) => productID == order.code).length > 0
+
+    order.valid = validOrderQuantity && validOrderId
+    return order
+}
+
 
