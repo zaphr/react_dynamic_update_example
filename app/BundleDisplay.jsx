@@ -1,24 +1,12 @@
 import React, { PropTypes } from 'react'
 import store from './Store.jsx'
+import ValidBundle from './ValidBundle.jsx'
+import InvalidBundle from './InvalidBundle.jsx'
 
 export default class BundleDisplay extends React.Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      userEntry: "",
-      bundleDisplay: ""
-    }
-  }
-
-  componentDidMount() {
-    store.subscribe(() => {
-      this.setState({userEntry: store.getState().userEntry})
-    }) 
-
-  }
-
   handleUserChange(event) {
+    // TODO: Line split needs testing on windows. *Believe* react normalises line endings but docs not clear
     store.dispatch({
       type: 'USER_ENTRY',
       value: event.target.value.split("\n")
@@ -26,6 +14,13 @@ export default class BundleDisplay extends React.Component {
   }
 
   render() {
+    let bundleOutput = this.props.bundles.map((bundle, index)=> {
+      if (bundle.valid) {
+        return <ValidBundle bundle={bundle} key={index}/>
+      } else {
+        return <InvalidBundle bundle={bundle} key={index}/>
+      }
+    })
 
     return (
       <div>
@@ -34,9 +29,10 @@ export default class BundleDisplay extends React.Component {
             placeholder="Enter orders"
             onChange={this.handleUserChange}
         />
-        <label>{this.state.userEntry}</label>
+        <div>{bundleOutput}</div>
       </div>
     );
   }
 }
-BundleDisplay.propTypes = { testText: React.PropTypes.string };
+
+BundleDisplay.propTypes = { bundles: React.PropTypes.array };
