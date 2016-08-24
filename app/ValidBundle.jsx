@@ -8,8 +8,8 @@ export default class ValidBundle extends React.Component {
             if (! bundle.bundleData[bundleMin]) {
                 return <li key={index}>{bundle.bundleCount[bundleMin]} x {bundleMin}  **** </li>
             } else {
-                return <li key={index}>{bundle.bundleCount[bundleMin]} x {bundleMin}
-                ${bundle.bundleCount[bundleMin] * bundle.bundleData[bundleMin]}  </li>
+                let lineTotal = bundle.bundleCount[bundleMin] * bundle.bundleData[bundleMin]
+                return <li key={index}>{bundle.bundleCount[bundleMin]} x {bundleMin} ${lineTotal} </li>
             }
         })
 
