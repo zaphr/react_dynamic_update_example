@@ -1,0 +1,10 @@
+Open this in a browser to run:
+./public/index.html
+
+
+Run webpack with:
+./node_modules/.bin/webpack -d
+
+
+Run tests with:
+
