@@ -47,7 +47,10 @@ const flowerStore = (state = intialState, action) => {
                         order.valid = false
                     }
                 }
-                orders.push(order)
+                // Ignore empty order lines
+                if (order.lineText.length > 0){
+                    orders.push(order)
+                }
             })
             return Object.assign({}, state, {bundles: orders})
     }
@@ -63,7 +66,7 @@ export default createStore(flowerStore)
 const orderForLine = (lineText, bundleData) => {
     var order = {
         valid: false,
-        lineText: lineText
+        lineText: lineText.trim()
     }
 
     let textSections = lineText.trim().split(" ").filter((line) => line.length != 0)

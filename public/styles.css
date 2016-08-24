@@ -1,22 +1,29 @@
 .invalidBundle {
+    margin: 1px;
+    padding: 10px;
     color: red;
     border: 1px solid black;
 }
 
 .validBundle {
-    color: green;
+    margin: 1px;
+    padding: 10px;
+    color: black;
     border: 1px solid black;
 }
 
 textArea {
-    width: 200px;
+    width: 300px;
     height: 200px;
 }
 
 .bundleDisplay {
     float: left;
-    border: 1px solid black;
     width: 300px;
+}
+
+.bundleDisplay ul {
+    list-style-type: none;
 }
 
 .orderEntry {
