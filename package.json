@@ -29,6 +29,9 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-react-hmre": "^1.1.1",
     "jest": "^14.1.0",
+    "jest-cli": "^14.1.0",
+    "jsdom": "^9.4.2",
+    "mocha": "^3.0.2",
     "react-addons-test-utils": "^15.3.1",
     "react-test-renderer": "^15.3.1",
     "redux-devtools": "^3.3.1"
