@@ -1,12 +1,24 @@
 .invalidBundle {
     color: red;
+    border: 1px solid black;
 }
 
 .validBundle {
     color: green;
+    border: 1px solid black;
 }
 
 textArea {
-    width: 500px;
-    height: 500px;
+    width: 200px;
+    height: 200px;
+}
+
+.bundleDisplay {
+    float: left;
+    border: 1px solid black;
+    width: 300px;
+}
+
+.orderEntry {
+    margin-left: 400px;
 }
