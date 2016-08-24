@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node_modules/.bin/webpack-dev-server --progress --inline --hot"
   },
   "author": "",
@@ -12,8 +12,10 @@
   "dependencies": {
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.5",
+    "babel-preset-airbnb": "^2.0.0",
     "babel-preset-es2015": "^6.13.2",
     "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-redux": "^4.4.5",
@@ -22,7 +24,16 @@
     "webpack-dev-server": "^1.14.1"
   },
   "devDependencies": {
+    "babel-jest": "^14.1.0",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
     "babel-preset-react-hmre": "^1.1.1",
+    "jest": "^14.1.0",
+    "react-addons-test-utils": "^15.3.1",
+    "react-test-renderer": "^15.3.1",
     "redux-devtools": "^3.3.1"
+  },
+  "jest": {
+    "automock": false
   }
 }
