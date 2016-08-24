@@ -124,10 +124,9 @@ const bundlesForOrder = (order, bundleData) => {
 
 const orderTotal = (order) => {
     var orderTotal = 0.0
-    // Ignore singles in total until requirements and values known
-    Object.keys(order.bundleCount).filter((countType) => countType != 1).forEach((bundleCountMin) => {
-        orderTotal = orderTotal + (order.bundleCount[bundleCountMin] * order.bundleData[bundleCountMin])
+    Object.keys(order.bundleCount).forEach((bundleCountMin) => {
+        orderTotal = orderTotal + order.bundleCount[bundleCountMin] * order.bundleData[bundleCountMin]
     })
-    return orderTotal
+    return Math.round(orderTotal * 100) / 100
 }
 
