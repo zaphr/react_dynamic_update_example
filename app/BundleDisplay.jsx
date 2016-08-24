@@ -1,17 +1,8 @@
 import React, { PropTypes } from 'react'
-import store from './Store.jsx'
 import ValidBundle from './ValidBundle.jsx'
 import InvalidBundle from './InvalidBundle.jsx'
 
 export default class BundleDisplay extends React.Component {
-
-  handleUserChange(event) {
-    // TODO: Line split needs testing on windows. *Believe* react normalises line endings but docs not clear
-    store.dispatch({
-      type: 'USER_ENTRY',
-      value: event.target.value.split("\n")
-    })
-  }
 
   render() {
     let bundleOutput = this.props.bundles.map((bundle, index)=> {
@@ -23,14 +14,9 @@ export default class BundleDisplay extends React.Component {
     })
 
     return (
-      <div>
-        <textarea
-            type="text"
-            placeholder="Enter orders"
-            onChange={this.handleUserChange}
-        />
-        <div>{bundleOutput}</div>
-      </div>
+        <div className="bundleDisplay">
+          {bundleOutput}
+        </div>
     );
   }
 }

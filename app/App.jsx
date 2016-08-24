@@ -1,5 +1,6 @@
 import React from 'react'
 import BundleDisplay from './BundleDisplay.jsx'
+import OrderEntry from './OrderEntry.jsx'
 import store from './Store.jsx'
 
 export default class App extends React.Component {
@@ -17,11 +18,10 @@ export default class App extends React.Component {
         })
     }
 
-
-
     render() {
         return (
             <div>
+                <OrderEntry/>
                 <BundleDisplay bundles={this.state.bundles}/>
             </div>
         );
