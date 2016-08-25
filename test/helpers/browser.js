@@ -18,3 +18,6 @@ global.navigator = {
 };
 
 documentRef = document;
+
+// Setup from:
+// https://semaphoreci.com/community/tutorials/testing-react-components-with-enzyme-and-mocha

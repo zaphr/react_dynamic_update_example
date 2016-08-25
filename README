@@ -1,4 +1,4 @@
-Open this in a browser to run:
+Open this in a browser to run demo:
 ./public/index.html
 
 
@@ -7,4 +7,4 @@ Run webpack with:
 
 
 Run tests with:
-
+npm test

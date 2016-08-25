@@ -7,7 +7,8 @@ export default class ValidBundle extends React.Component {
         // Render largest bundles first
         let bundleKeys = Object.keys(bundle.bundleCount).sort((a, b)=> { return a - b * -1 })
         let bundleItems = bundleKeys.map((bundleMin, index)=> {
-            return <li key={index}>{bundle.bundleCount[bundleMin]} x {bundleMin} ${bundle.bundleData[bundleMin].toFixed(2)} </li>
+            return <li key={index} className="bundleLine"
+            >{bundle.bundleCount[bundleMin]} x {bundleMin} ${bundle.bundleData[bundleMin].toFixed(2)}</li>
         })
 
         return (
