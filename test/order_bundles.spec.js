@@ -14,7 +14,7 @@ describe('entering a valid 3 line order', () => {
         15 L09
         13 T58`
 
-        app.find('textarea').simulate('change', { target: { value: order} })
+        app.find('.userEntry').simulate('change', { target: { value: order} })
     })
 
     it('should display 3 valid bundles', () => {

@@ -15,6 +15,7 @@ export default class OrderEntry extends React.Component {
         return (
             <div className="orderEntry">
         <textarea
+            className="userEntry"
             type="text"
             placeholder="Enter orders"
             onChange={this.handleUserChange}
