@@ -21,7 +21,7 @@ export default class ValidBundle extends React.Component {
                 </ul>
 
             </div>
-        );
+        )
     }
 }
-ValidBundle.propTypes = { bundle: React.PropTypes.object };
+ValidBundle.propTypes = { bundle: React.PropTypes.object }

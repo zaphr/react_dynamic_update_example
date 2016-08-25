@@ -24,7 +24,7 @@ export default class App extends React.Component {
                 <BundleDisplay bundles={this.state.bundles}/>
                 <OrderEntry/>
             </div>
-        );
+        )
     }
 }
 

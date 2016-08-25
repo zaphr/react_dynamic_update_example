@@ -17,8 +17,8 @@ export default class BundleDisplay extends React.Component {
         <div className="bundleDisplay">
           {bundleOutput}
         </div>
-    );
+    )
   }
 }
 
-BundleDisplay.propTypes = { bundles: React.PropTypes.array };
+BundleDisplay.propTypes = { bundles: React.PropTypes.array }

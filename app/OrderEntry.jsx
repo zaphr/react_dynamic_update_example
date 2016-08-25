@@ -20,6 +20,6 @@ export default class OrderEntry extends React.Component {
             onChange={this.handleUserChange}
         />
             </div>
-        );
+        )
     }
 }

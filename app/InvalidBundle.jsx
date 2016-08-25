@@ -8,7 +8,7 @@ export default class InvalidBundle extends React.Component {
             <div className="invalidBundle">
                 {this.props.bundle.lineText}
             </div>
-        );
+        )
     }
 }
-InvalidBundle.propTypes = { bundle: React.PropTypes.object };
+InvalidBundle.propTypes = { bundle: React.PropTypes.object }
