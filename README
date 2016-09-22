@@ -1,3 +1,5 @@
+Standalone ES6 React with Redux example for live UI update and validation. Using Mocha and Enzyme for testing
+
 Open this in a browser to run demo:
 ./public/index.html
 
