@@ -4,6 +4,12 @@ Open this in a browser to run demo:
 ./public/index.html
 
 
+Examples of valid dummy data to enter to show dynamic validation:
+10 R12
+15 L09
+13 T58
+
+
 Run webpack with:
 ./node_modules/.bin/webpack -d
 
